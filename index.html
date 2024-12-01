@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive Website Example">
+    <title>Responsive Website</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header,
+        footer {
+            text-align: center;
+            padding: 1em;
+            background: #0073e6;
+            color: white;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        figure {
+            margin: 0;
+            padding: 10px;
+            overflow: hidden;
+            text-align: center;
+            border: 2px solid #ccc;
+            transition: all 0.3s ease;
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        /* Mobile View - Default */
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-gap: 10px;
+            padding: 10px;
+        }
+
+        /* Tablet View */
+        @media (min-width: 772px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+            }
+
+            figure {
+                border-radius: 50%;
+            }
+
+            figure:last-of-type {
+                grid-column: span 2;
+            }
+        }
+
+        /* Large Screen View */
+        @media (min-width: 992px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            figure {
+                border-radius: 0;
+            }
+
+            figure:nth-of-type(3n) {
+                grid-column: span 2;
+            }
+        }
+
+        /* Prefers-Reduced-Motion */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                scroll-behavior: auto !important;
+            }
+        }
+
+        /* Dark Color Scheme */
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #121212;
+                color: #f5f5f5;
+            }
+
+            figure {
+                background-color: #333;
+                color: #ffd700;
+                border-color: #000;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Responsive Website</h1>
+    </header>
+    <main>
+        <section class="container">
+            <figure>
+                <img src="image1.jpg" alt="Image 1 description">
+                <figcaption>Caption for Image 1</figcaption>
+            </figure>
+            <figure>
+                <img src="image2.jpg" alt="Image 2 description">
+                <figcaption>Caption for Image 2</figcaption>
+            </figure>
+            <figure>
+                <img src="image3.jpg" alt="Image 3 description">
+                <figcaption>Caption for Image 3</figcaption>
+            </figure>
+            <figure>
+                <img src="image4.jpg" alt="Image 4 description">
+                <figcaption>Caption for Image 4</figcaption>
+            </figure>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Responsive Website Project</p>
+    </footer>
+</body>
+
+</html>
